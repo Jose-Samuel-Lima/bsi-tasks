@@ -62,3 +62,21 @@ A durabilidade garante que, depois que uma transação for confirmada, suas alte
 Exemplo: depois que uma transferência bancária é confirmada, os novos saldos devem permanecer registrados.
 
 Se a durabilidade não fosse garantida e o servidor sofresse uma falha logo após confirmar a transferência, as alterações poderiam ser perdidas e o sistema poderia retornar aos saldos anteriores.
+
+Q4. Para cada cenário abaixo, indique qual(is) propriedade(s) ACID está(ão) em jogo e justifique sua resposta:
+
+a) Queda de energia no meio de uma transferência deixou o valor debitado da conta de origem, mas não creditado na conta de destino.
+
+A principal propriedade envolvida é a atomicidade. A transferência deveria ser tratada como uma única transação: ou o débito e o crédito são realizados, ou nenhum dos dois deve ser efetivado. Nesse contexto, a atomicidade não foi garantida, pois apenas uma parte da operação foi realizada. O SGBD deveria desfazer o débito por meio de um rollback ou utilizar mecanismos de recuperação para deixar o banco de dados em um estado válido.
+
+b) Dois atendentes debitam, ao mesmo tempo, o mesmo saldo de uma conta.
+
+A principal propriedade envolvida é o isolamento. As duas transações estão sendo executadas simultaneamente e precisam ser controladas para que uma não utilize informações incorretas produzidas pela outra. Sem isolamento adequado, as duas operações poderiam consultar o mesmo saldo antes de qualquer atualização e realizar débitos incompatíveis com o saldo real da conta.
+
+c) O sistema confirma a operação, mas após reiniciar o servidor o dado foi perdido.
+
+A propriedade envolvida é a durabilidade. Depois que uma transação é confirmada, seus dados devem permanecer armazenados mesmo após uma falha ou reinicialização do servidor. Se o dado foi perdido depois da confirmação, significa que a alteração não foi preservada corretamente.
+
+d) Uma transferência que levaria o saldo abaixo do limite permitido é rejeitada pelo banco.
+
+A propriedade envolvida é principalmente a consistência. O banco possui uma regra que determina que o saldo não pode ficar abaixo de determinado limite. A transação deve respeitar essa regra. Ao rejeitar a transferência, o SGBD mantém o banco de dados em um estado válido e impede que uma operação inválida seja registrada.
