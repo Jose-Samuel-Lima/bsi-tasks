@@ -80,3 +80,20 @@ A propriedade envolvida é a durabilidade. Depois que uma transação é confirm
 d) Uma transferência que levaria o saldo abaixo do limite permitido é rejeitada pelo banco.
 
 A propriedade envolvida é principalmente a consistência. O banco possui uma regra que determina que o saldo não pode ficar abaixo de determinado limite. A transação deve respeitar essa regra. Ao rejeitar a transferência, o SGBD mantém o banco de dados em um estado válido e impede que uma operação inválida seja registrada.
+
+Q5. Um SGBD trata dos seguintes aspectos: recuperação, integridade, redundância e inconsistência. Explique cada um deles e descreva como o SGBD os gerencia.
+
+Integridade:
+
+A integridade está relacionada à manutenção da validade e correção dos dados armazenados.
+O SGBD utiliza regras e restrições para impedir informações inválidas. Por exemplo, uma chave primária deve identificar unicamente um registro e um relacionamento entre tabelas deve respeitar as regras de integridade referencial.
+
+Redundância:
+
+A redundância ocorre quando a mesma informação é armazenada mais de uma vez sem necessidade.
+Um SGBD pode reduzir a redundância por meio de uma organização adequada dos dados, especialmente através da modelagem e normalização de bancos de dados relacionais.
+
+Inconsistência:
+
+A inconsistência ocorre quando existem informações conflitantes ou incorretas no banco de dados. Por exemplo, se o endereço de um cliente estiver atualizado em uma tabela, mas permanecer antigo em outro local que também armazena o endereço, haverá inconsistência.
+O SGBD ajuda a evitar esse problema por meio de restrições de integridade, transações, controle de concorrência e uma organização adequada dos dados.
