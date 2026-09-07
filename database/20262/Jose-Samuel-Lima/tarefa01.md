@@ -97,3 +97,136 @@ Inconsistência:
 
 A inconsistência ocorre quando existem informações conflitantes ou incorretas no banco de dados. Por exemplo, se o endereço de um cliente estiver atualizado em uma tabela, mas permanecer antigo em outro local que também armazena o endereço, haverá inconsistência.
 O SGBD ajuda a evitar esse problema por meio de restrições de integridade, transações, controle de concorrência e uma organização adequada dos dados.
+
+
+Q6. Mini-projeto conceitual
+
+a) Principais entidades
+
+As principais entidades identificadas são:
+
+Cliente, Projeto, Squad, Membro, Tarefa, Sprint, Release
+
+b) Principais atributos
+
+
+Cliente:
+id_cliente
+nome
+CNPJ
+email
+telefone
+
+Projeto:
+id_projeto
+nome
+descrição
+data_inicio
+data_fim
+status
+
+Squad:
+id_squad
+nome
+descrição
+objetivo
+data_criacao
+
+Membro:
+id_membro
+nome
+email
+cargo
+especialidade
+data_entrada
+
+Tarefa:
+id_tarefa
+título
+descrição
+status
+prioridade
+data_criacao
+prazo
+data_conclusao
+
+Sprint:
+id_sprint
+nome
+objetivo
+data_inicio
+data_fim
+status
+
+Release:
+id_release
+versão
+descrição
+data_planejada
+data_lancamento
+status
+
+c) Relacionamentos e cardinalidades
+
+Cliente —> Projeto
+
+Cardinalidade: 1
+Um cliente pode ter vários projetos e cada projeto pertence a um único cliente.
+
+Projeto —> Squad
+
+Cardinalidade: N
+Um projeto pode possuir várias squads e uma squad pode participar de vários projetos.
+
+Squad —> Membro
+
+Cardinalidade: N
+Uma squad possui vários membros e um membro pode participar de diferentes squads.
+
+Projeto —> Tarefa
+
+Cardinalidade: 1
+Um projeto pode possuir várias tarefas, mas toda tarefa deve pertencer a um projeto.
+
+Squad —> Tarefa
+
+Cardinalidade: 1
+Uma squad pode resolver várias tarefas, enquanto cada tarefa possui uma squad responsável.
+
+Projeto —> Sprint
+
+Cardinalidade: 1
+Um projeto pode possuir várias sprints, mas cada sprint pertence a um único projeto.
+
+Sprint —> Tarefa
+
+Cardinalidade: 1
+Uma sprint pode possuir várias tarefas, enquanto uma tarefa pode estar associada a uma sprint.
+
+Projeto —> Release
+
+Cardinalidade: 1
+Um projeto pode possuir várias releases, mas cada release pertence a um único projeto.
+
+d) Regras de integridade
+
+O banco de dados deve garantir algumas regras para manter os dados corretos e consistentes:
+
+1ª Regra - Cada cliente deve possuir um identificador único.
+2ª Regra -Cada projeto deve estar obrigatoriamente vinculado a um cliente.
+3ª Regra -Um cliente pode possuir vários projetos, mas cada projeto deve pertencer a apenas um cliente.
+4ª Regra -Cada squad deve possuir um identificador único.
+5ª Regra -Uma squad deve possuir pelo menos um membro.
+6ª Regra -Cada membro deve possuir um identificador único.
+7ª Regra -Cada squad deve possuir apenas um líder técnico responsável.
+8ª Regra -Uma squad pode possuir desenvolvedores, testadores, líder técnico, supervisor e gerente de produto.
+9ª Regra -Toda tarefa deve estar obrigatoriamente vinculada a um projeto.
+10ª Regra -Toda tarefa deve possuir um status válido, como pendente, em andamento, concluída ou cancelada.
+11ª Regra -Uma tarefa deve possuir uma squad responsável pela sua execução.
+12ª Regra -Uma sprint deve estar vinculada a um projeto.
+13ª Regra -A data de término de uma sprint não pode ser anterior à sua data de início.
+14ª Regra -Uma release deve estar vinculada a um projeto.
+15ª Regra -Uma release não pode possuir uma data de lançamento anterior à data de planejamento, quando essas datas forem utilizadas para representar o planejamento e a execução da release.
+16ª Regra -Os identificadores das entidades devem ser únicos e não podem ser utilizados por dois registros diferentes.
+17ª Regra -Informações obrigatórias, como nome de cliente, projeto ou tarefa, não devem ser deixadas vazias.
+18ª Regra -O banco de dados deve impedir a exclusão de um registro quando essa exclusão gerar relacionamentos inválidos ou, quando permitido, deve tratar adequadamente os registros relacionados.
