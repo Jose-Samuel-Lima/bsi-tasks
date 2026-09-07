@@ -1,6 +1,6 @@
-Tarefa 01 - Conceitos de BD, ACID e SGBD
+# Tarefa 01 - Conceitos de BD, ACID e SGBD
 
-Q1. Descreva o que é um Banco de Dados e o que é um Sistema Gerenciador de Banco de Dados. Cite exemplos de Bancos de Dados e seus SGBDs.
+### Q1. Descreva o que é um Banco de Dados e o que é um Sistema Gerenciador de Banco de Dados. Cite exemplos de Bancos de Dados e seus SGBDs.
 
 Um Banco de Dados (BD) é uma coleção organizada de dados relacionados, armazenados de forma que possam ser consultados, inseridos, alterados e removidos de maneira eficiente. Ele permite armazenar informações de forma estruturada para que possam ser utilizadas por sistemas e usuários.
 Um Sistema Gerenciador de Banco de Dados (SGBD) é o software responsável por criar, organizar, armazenar, consultar e controlar o acesso aos dados de um banco de dados. Além disso, o SGBD oferece mecanismos para garantir segurança, integridade, controle de concorrência, recuperação de falhas e consistência dos dados.
@@ -15,7 +15,7 @@ Banco de dados corporativo  |  SQL Server
 Banco de dados embutido	    |  SQLite
 Banco de dados orientado a documentos  |  MongoDB
 
-Q2. Quais os principais problemas de utilizar Sistemas de Arquivos para armazenagem de dados?
+### Q2. Quais os principais problemas de utilizar Sistemas de Arquivos para armazenagem de dados?
 
 Um dos principais problemas é a redundância de dados, pois a mesma informação pode ser armazenada em vários arquivos diferentes. Isso aumenta o espaço utilizado e pode fazer com que existam versões diferentes da mesma informação.
 
@@ -29,7 +29,7 @@ Os sistemas de arquivos também apresentam dificuldades relacionadas à concorr�
 
 Além disso, a recuperação após falhas pode ser limitada. Uma falha de energia ou do sistema durante uma alteração pode deixar os arquivos em um estado incompleto ou inconsistente.
 
-Q3. Explique as propriedades ACID: atomicidade, consistência, isolamento e durabilidade. Para cada propriedade, descreva um exemplo prático no contexto de uma transferência bancária e explique o que aconteceria se o SGBD não garantisse essa propriedade.
+### Q3. Explique as propriedades ACID: atomicidade, consistência, isolamento e durabilidade. Para cada propriedade, descreva um exemplo prático no contexto de uma transferência bancária e explique o que aconteceria se o SGBD não garantisse essa propriedade.
 
 Atomicidade:
 
@@ -63,7 +63,7 @@ Exemplo: depois que uma transferência bancária é confirmada, os novos saldos 
 
 Se a durabilidade não fosse garantida e o servidor sofresse uma falha logo após confirmar a transferência, as alterações poderiam ser perdidas e o sistema poderia retornar aos saldos anteriores.
 
-Q4. Para cada cenário abaixo, indique qual(is) propriedade(s) ACID está(ão) em jogo e justifique sua resposta:
+### Q4. Para cada cenário abaixo, indique qual(is) propriedade(s) ACID está(ão) em jogo e justifique sua resposta:
 
 a) Queda de energia no meio de uma transferência deixou o valor debitado da conta de origem, mas não creditado na conta de destino.
 
@@ -81,7 +81,7 @@ d) Uma transferência que levaria o saldo abaixo do limite permitido é rejeitad
 
 A propriedade envolvida é principalmente a consistência. O banco possui uma regra que determina que o saldo não pode ficar abaixo de determinado limite. A transação deve respeitar essa regra. Ao rejeitar a transferência, o SGBD mantém o banco de dados em um estado válido e impede que uma operação inválida seja registrada.
 
-Q5. Um SGBD trata dos seguintes aspectos: recuperação, integridade, redundância e inconsistência. Explique cada um deles e descreva como o SGBD os gerencia.
+### Q5. Um SGBD trata dos seguintes aspectos: recuperação, integridade, redundância e inconsistência. Explique cada um deles e descreva como o SGBD os gerencia.
 
 Integridade:
 
@@ -99,7 +99,7 @@ A inconsistência ocorre quando existem informações conflitantes ou incorretas
 O SGBD ajuda a evitar esse problema por meio de restrições de integridade, transações, controle de concorrência e uma organização adequada dos dados.
 
 
-Q6. Mini-projeto conceitual
+### Q6. Mini-projeto conceitual
 
 a) Principais entidades
 
@@ -230,3 +230,29 @@ O banco de dados deve garantir algumas regras para manter os dados corretos e co
 16ª Regra -Os identificadores das entidades devem ser únicos e não podem ser utilizados por dois registros diferentes.
 17ª Regra -Informações obrigatórias, como nome de cliente, projeto ou tarefa, não devem ser deixadas vazias.
 18ª Regra -O banco de dados deve impedir a exclusão de um registro quando essa exclusão gerar relacionamentos inválidos ou, quando permitido, deve tratar adequadamente os registros relacionados.
+
+# Conceitos de Git e GitHub
+
+## Branch
+
+Uma **branch** é uma linha independente de desenvolvimento dentro de um repositório Git. Ela permite trabalhar em uma tarefa ou funcionalidade sem alterar diretamente a branch principal.
+
+## Pull Request
+
+Um **Pull Request (PR)** é uma solicitação para que as alterações feitas em uma branch sejam analisadas e incorporadas a outra branch.
+
+Neste trabalho, o Pull Request será utilizado para enviar as alterações da branch da tarefa no fork para a branch `main` do repositório original.
+
+## Merge
+
+O **merge** é utilizado para unir as alterações de uma branch com outra. Após a aprovação de um Pull Request, por exemplo, as alterações podem ser integradas à branch principal.
+
+## Rebase
+
+O **rebase** reorganiza os commits de uma branch colocando-os sobre uma base mais atualizada. Pode ser utilizado para atualizar uma branch com as alterações mais recentes da `main`.
+
+## Conflitos
+
+Os **conflitos** acontecem quando o Git não consegue combinar automaticamente alterações diferentes feitas no mesmo trecho de um arquivo.
+
+Quando isso acontece, o desenvolvedor precisa resolver manualmente o conflito, escolher quais alterações devem permanecer e depois realizar um novo commit.
