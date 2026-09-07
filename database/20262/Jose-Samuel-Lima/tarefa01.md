@@ -28,3 +28,37 @@ Outro problema é o controle de acesso e segurança. É mais difícil controlar 
 Os sistemas de arquivos também apresentam dificuldades relacionadas à concorrência, pois vários usuários ou programas podem tentar alterar o mesmo arquivo simultaneamente, causando conflitos ou perda de informações.
 
 Além disso, a recuperação após falhas pode ser limitada. Uma falha de energia ou do sistema durante uma alteração pode deixar os arquivos em um estado incompleto ou inconsistente.
+
+Q3. Explique as propriedades ACID: atomicidade, consistência, isolamento e durabilidade. Para cada propriedade, descreva um exemplo prático no contexto de uma transferência bancária e explique o que aconteceria se o SGBD não garantisse essa propriedade.
+
+Atomicidade:
+
+A atomicidade determina que uma transação deve ser executada completamente ou não ser executada. Não deve existir um estado em que apenas parte da operação tenha sido realizada.
+
+Exemplo: em uma transferência bancária de R$ 500,00, o sistema precisa retirar R$ 500,00 da conta de origem e adicionar R$ 500,00 à conta de destino.
+
+Se a atomicidade não fosse garantida e o sistema sofresse uma falha depois de debitar a conta de origem, mas antes de creditar a conta de destino, o dinheiro poderia desaparecer da conta de origem sem aparecer na conta de destino.
+
+Consistência:
+
+A consistência garante que uma transação leve o banco de dados de um estado válido para outro estado válido, respeitando todas as regras e restrições definidas.
+
+Exemplo: se uma conta possui R$ 1.000,00 e uma transferência de R$ 500,00 é realizada, após a operação o saldo deve ser R$ 500,00, respeitando as regras do banco.
+
+Se a consistência não fosse garantida, uma transação poderia deixar dados inválidos, como um saldo incorreto ou uma operação que viole uma regra estabelecida pelo banco.
+
+Isolamento:
+
+O isolamento garante que transações executadas simultaneamente não interfiram de maneira incorreta umas nas outras. Cada transação deve funcionar como se estivesse sendo executada de forma independente.
+
+Exemplo: duas operações tentam realizar transferências simultaneamente usando o mesmo saldo de uma conta.
+
+Se o isolamento não fosse garantido, as duas operações poderiam ler o mesmo saldo antes que uma delas fosse atualizada, causando cálculos incorretos e podendo permitir que o banco registrasse operações incompatíveis com o saldo disponível.
+
+Durabilidade:
+
+A durabilidade garante que, depois que uma transação for confirmada, suas alterações permaneçam armazenadas mesmo que ocorra uma falha no sistema.
+
+Exemplo: depois que uma transferência bancária é confirmada, os novos saldos devem permanecer registrados.
+
+Se a durabilidade não fosse garantida e o servidor sofresse uma falha logo após confirmar a transferência, as alterações poderiam ser perdidas e o sistema poderia retornar aos saldos anteriores.
