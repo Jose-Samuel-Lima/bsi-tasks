@@ -66,6 +66,19 @@ https://code.visualstudio.com/docs/editor/debugging
 
 ## 5. Tutorial de CRUD com Testes
 
+Foi pesquisado um projeto tutorial que apresenta a implementação de um CRUD utilizando **Express e Mongoose**, juntamente com testes unitários e testes de integração utilizando **Jest**.
+
+O tutorial apresenta uma aplicação CRUD e demonstra como configurar o projeto, instalar as dependências, executar a aplicação e executar os testes. Também utiliza Jest para verificar o funcionamento das operações da aplicação.
+
+Esse material é relacionado ao SpendSmart porque apresenta uma abordagem prática para testar operações de um CRUD, que será utilizada como referência para a implementação dos testes no projeto.
+
+**Tutorial:**
+https://github.com/minhajul-karim/crud-express-mongoose-with-unit-integration-tests
+
+**Descrição:**
+O projeto demonstra um CRUD desenvolvido com Express e Mongoose e possui testes unitários e de integração escritos com Jest. Ele será utilizado como referência para compreender a organização dos testes e a diferença entre testar componentes isoladamente e testar a integração entre partes da aplicação.
+
+
 ## 6. Mock Objects
 
 ## 7. Projeto CRUD
