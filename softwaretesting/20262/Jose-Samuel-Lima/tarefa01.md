@@ -81,6 +81,20 @@ O projeto demonstra um CRUD desenvolvido com Express e Mongoose e possui testes 
 
 ## 6. Mock Objects
 
+**Mock Objects** são objetos simulados utilizados nos testes para representar o comportamento de componentes ou dependências reais. Eles permitem que uma parte do sistema seja testada de forma isolada, sem depender diretamente de serviços externos ou de outras partes da aplicação.
+
+Os mocks são especialmente úteis em testes unitários porque permitem controlar o comportamento da dependência utilizada pelo código. Dessa forma, é possível definir previamente o resultado esperado e verificar se a unidade testada reage corretamente.
+
+No projeto SpendSmart, os mocks serão utilizados principalmente para simular as requisições realizadas pelo **Axios**. Assim, os testes das operações do CRUD poderão verificar o comportamento das funções sem precisar realizar uma requisição real à API.
+
+Por exemplo, em um teste de inserção de categoria, o Axios poderá ser simulado para retornar uma resposta de sucesso. O teste então verifica se a função do SpendSmart realizou a chamada esperada e tratou corretamente o resultado.
+
+O uso de mocks permite, portanto, tornar os testes unitários mais rápidos, previsíveis e independentes de serviços externos.
+
+**Referência:**
+https://jestjs.io/docs/mock-function-api
+
+
 ## 7. Projeto CRUD
 
 ## 8. Testes e Cobertura
