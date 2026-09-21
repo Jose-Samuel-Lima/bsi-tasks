@@ -18,6 +18,21 @@ Os testes são importantes porque ajudam a identificar problemas antes que o sof
 
 ## 2. Linguagem e Stack
 
+Para o desenvolvimento dos testes e evolução do projeto SpendSmart, será utilizada a linguagem **JavaScript**, já utilizada no projeto.
+
+A aplicação utiliza **React** para a construção da interface e **Next.js** como framework da aplicação. Para realizar as requisições HTTP utilizadas nas operações do CRUD, o projeto utiliza a biblioteca **Axios**.
+
+Para a implementação dos testes automatizados será utilizado o **Jest**, permitindo criar e executar testes para verificar o comportamento das funcionalidades do sistema.
+
+### Stack utilizada
+
+* **JavaScript:** linguagem de programação utilizada no projeto.
+* **React:** biblioteca utilizada para construção da interface.
+* **Next.js:** framework utilizado na aplicação.
+* **Axios:** biblioteca utilizada para realizar requisições HTTP.
+* **Jest:** framework que será utilizado para os testes automatizados.
+
+
 ## 3. Framework de Testes Unitários
 
 ## 4. IDE e Ferramentas de Debug
