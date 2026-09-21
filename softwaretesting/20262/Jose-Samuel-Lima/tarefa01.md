@@ -52,6 +52,18 @@ https://jestjs.io/docs/mock-function-api
 
 ## 4. IDE e Ferramentas de Debug
 
+A IDE utilizada no desenvolvimento do projeto SpendSmart é o **Visual Studio Code (VS Code)**.
+
+O VS Code oferece recursos que auxiliam no desenvolvimento e na identificação de erros, como o **Debugger**, que permite executar o programa passo a passo, adicionar breakpoints, acompanhar valores das variáveis e analisar o fluxo de execução.
+
+Além do debugger, o VS Code possui integração com o terminal, permitindo executar comandos do projeto, instalar dependências, executar os testes automatizados e analisar os resultados diretamente no ambiente de desenvolvimento.
+
+No projeto SpendSmart, o VS Code será utilizado para desenvolver os testes com Jest, executar os testes e auxiliar na identificação de possíveis erros durante a implementação.
+
+**Documentação oficial do Visual Studio Code sobre Debugging:**
+https://code.visualstudio.com/docs/editor/debugging
+
+
 ## 5. Tutorial de CRUD com Testes
 
 ## 6. Mock Objects
