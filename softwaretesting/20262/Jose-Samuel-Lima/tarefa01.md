@@ -35,6 +35,21 @@ Para a implementação dos testes automatizados será utilizado o **Jest**, perm
 
 ## 3. Framework de Testes Unitários
 
+O framework escolhido para os testes automatizados do projeto SpendSmart é o **Jest**.
+
+O Jest é um framework de testes para JavaScript que permite criar, executar e verificar testes de forma automatizada. Ele possui recursos para realizar asserções com `expect`, organizar testes e criar funções simuladas (mocks), que serão utilizadas neste projeto para testar as operações do CRUD sem depender diretamente de serviços externos.
+
+A documentação oficial do Jest apresenta exemplos de instalação utilizando npm, criação de arquivos de teste e configuração do script de testes no `package.json`.
+
+No projeto SpendSmart, o Jest será utilizado para criar os testes unitários das operações do CRUD e, posteriormente, para executar os testes e gerar o relatório de cobertura.
+
+**Documentação oficial:**
+https://jestjs.io/docs/getting-started
+
+**Documentação sobre mocks:**
+https://jestjs.io/docs/mock-function-api
+
+
 ## 4. IDE e Ferramentas de Debug
 
 ## 5. Tutorial de CRUD com Testes
