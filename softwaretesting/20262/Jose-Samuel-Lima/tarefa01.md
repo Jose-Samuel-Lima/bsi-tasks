@@ -152,4 +152,18 @@ categoriaService.js  |     100 |      100 |     100 |     100 |
 
 ## 9. Integração Contínua (CI)
 
+Foi configurado um workflow do GitHub Actions para executar automaticamente os testes do projeto.
+
+- [Workflow de testes](./.github/workflows/test.yml)
+
+O workflow realiza as seguintes etapas:
+
+1. Baixa o código do repositório.
+2. Configura o Node.js 20.
+3. Instala as dependências utilizando `npm ci`.
+4. Executa os testes e calcula a cobertura utilizando:
+
+```bash
+npm run test:coverage
+
 ## 10. SonarQube
