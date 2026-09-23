@@ -95,9 +95,60 @@ O uso de mocks permite, portanto, tornar os testes unitários mais rápidos, pre
 https://jestjs.io/docs/mock-function-api
 
 
-## 7. Projeto CRUD
+## 7. Testes do Projeto
+
+O SpendSmart possui testes automatizados para o CRUD de categorias.
+
+Os testes foram implementados utilizando **Jest**, com **axios-mock-adapter** para simular as requisições HTTP.
+
+Foram implementados testes para as quatro operações do CRUD:
+
+- **Inserção:** criação de uma nova categoria.
+- **Consulta:** busca das categorias.
+- **Atualização:** alteração de uma categoria existente.
+- **Exclusão:** remoção de uma categoria.
+
+Também foi criado um teste de integração para verificar a comunicação entre o serviço de categorias e o cliente HTTP.
+
+### Arquivos de teste
+
+- [Testes unitários](./tests/categoria.test.js)
+- [Teste de integração](./tests/categoria.integration.test.js)
+- [Serviço de categorias](./services/categoriaService.js)
+
+### Execução dos testes
+
+Os testes podem ser executados com:
+
+```bash
+npm test
+```
+Para executar os testes com cobertura:
+
+```bash
+npm run test:coverage
+```
 
 ## 8. Testes e Cobertura
+
+Foram executados testes unitários e de integração utilizando o Jest.
+
+Para executar os testes:
+```bash
+npm test
+```
+Resultado:
+
+Test Suites: 2 passed, 2 total
+Tests:       5 passed, 5 total
+
+Para verificar a cobertura dos testes, foi utilizado:
+```bash
+npm run test:coverage
+```
+
+All files            |     100 |      100 |     100 |     100 |
+categoriaService.js  |     100 |      100 |     100 |     100 |
 
 ## 9. Integração Contínua (CI)
 
