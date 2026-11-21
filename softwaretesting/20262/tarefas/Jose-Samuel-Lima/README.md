@@ -7,6 +7,7 @@
 ## Atividade
 
 * [Tarefa 01 - Teste de Unidade, Integração, Cobertura e CI](./tarefa01.md)
+* [Tarefa 05 - Implantação de DevOps, CI e CD (relatório no SpendSmart)](https://github.com/MViniciusCoffe/SpendSmart/blob/main/docs/relatorio-ci-cd.md)
 
 ## Projeto
 
