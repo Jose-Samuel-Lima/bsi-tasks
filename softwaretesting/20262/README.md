@@ -169,7 +169,8 @@ apresentar um painel com saldo, receitas e gastos.
 
   * Link Repositório do Projeto: <https://github.com/MViniciusCoffe/SpendSmart>
   * Link Issue P5: https://github.com/tacianosilva/bsi-tasks/issues/609
-  * Link Pull Request (P5): https://github.com/MViniciusCoffe/SpendSmart/pull/#PR_PROJETO_P5
+  * Link Pull Request (P5): https://github.com/MViniciusCoffe/SpendSmart/pull/108
+  * Link Pull Request no fork da disciplina (P5): https://github.com/Jose-Samuel-Lima/bsi-tasks/pull/2
   * Link Workflow de CI/CD em execução: <https://github.com/MViniciusCoffe/SpendSmart/actions/workflows/deploy.yml>
   * Link URL do sistema publicado: <https://spend-smart-lilac.vercel.app/>
   * Link endpoint `/health`: <https://spend-smart-lilac.vercel.app/health>
